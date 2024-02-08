@@ -1,0 +1,46 @@
+{
+    "name": "charonlab/charon-events",
+    "description": "An implementation of event dispatcher based on the PSR-14 standard.",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
+        "psr/event-dispatcher": "^1.0"
+    },
+    "require-dev": {
+        "charonlab/coding-standard": "1.2.x-dev",
+        "phpunit/phpunit": "10.5.x-dev",
+        "vimeo/psalm": "6.x-dev"
+    },
+    "provide": {
+        "psr/event-dispatcher-implementation": "1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Charon\\Events\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Charon\\Tests\\Unit\\": "tests/unit/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.2.15"
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "lint-check": "phpcs",
+        "lint-fix": "phpcbf",
+        "static-analysis": "psalm --shepherd --stats",
+        "test": "phpunit --colors=always"
+    }
+}
