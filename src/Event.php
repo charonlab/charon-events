@@ -24,6 +24,11 @@ class Event implements StoppableEventInterface
         return $this->propagationStopped;
     }
 
+    /**
+     * Sets the event propagation should be stopped.
+     *
+     * @return void
+     */
     public function setPropagationStopped(): void {
         $this->propagationStopped = true;
     }
