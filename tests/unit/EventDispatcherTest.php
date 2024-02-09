@@ -29,7 +29,8 @@ class EventDispatcherTest extends TestCase
             $invoked = true;
         });
 
-        $this->dispatcher->dispatch(new class{}, 'test.event');
+        $this->dispatcher->dispatch(new class {
+        }, 'test.event');
 
         self::assertTrue(
             $invoked,

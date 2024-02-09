@@ -44,8 +44,7 @@ class EventDispatcher implements EventDispatcherInterface
     /**
      * @inheritDoc
      */
-    public function getListeners(string $eventName): iterable
-    {
+    public function getListeners(string $eventName): iterable {
         if ($this->listeners[$eventName] === []) {
             return [];
         }
