@@ -72,7 +72,7 @@ class EventDispatcher implements EventDispatcherInterface
                 break;
             }
 
-            $listener($event);
+            $listener($event, $eventName, $this);
         }
     }
 
