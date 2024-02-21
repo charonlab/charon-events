@@ -22,6 +22,14 @@ use PHPUnit\Framework\TestCase;
 class EventDispatcherTest extends TestCase
 {
     private EventDispatcher $dispatcher;
+
+    public function testDispatchesWithoutListeners(): void {
+        $listeners = $this->dispatcher->getListeners('event');
+
+        self::assertEmpty($listeners);
+        self::assertCount(0, $listeners);
+    }
+
     public function testDispatchShouldInvokeListener(): void {
         $invoked = false;
 
