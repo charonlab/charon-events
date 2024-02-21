@@ -45,11 +45,11 @@ class EventDispatcher implements EventDispatcherInterface
      * @inheritDoc
      */
     public function getListeners(string $eventName): iterable {
-        if ($this->listeners[$eventName] === []) {
+        if (empty($this->listeners[$eventName])) {
             return [];
         }
 
-        if (!$this->sortedListeners[$eventName]) {
+        if (!isset($this->sortedListeners[$eventName])) {
             $this->sortListeners($eventName);
         }
 
